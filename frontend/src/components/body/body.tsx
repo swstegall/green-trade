@@ -19,6 +19,7 @@ export class Body extends Component<
       const tempRows = arr.map((item: any, index: number) => {
         return (
           <tr key={index}>
+            <td>{item.name}</td>
             <td>{item.lookingFor}</td>
             <td>{item.trading}</td>
             <td>{`${item.completed}`}</td>
@@ -48,6 +49,7 @@ export class Body extends Component<
             >
               <thead>
                 <tr>
+                  <th className={"th-sm"}>Name</th>
                   <th className={"th-sm"}>Looking For</th>
                   <th className={"th-sm"}>Trading</th>
                   <th className={"th-sm"}>Completed</th>

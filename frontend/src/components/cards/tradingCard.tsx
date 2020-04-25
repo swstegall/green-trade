@@ -19,7 +19,7 @@ export class TradingCard extends Component<{ tradingActive: boolean, trading: an
       <MDBModal isOpen={this.props.tradingActive} toggle={this.props.trading} centered>
         <MDBModalHeader toggle={this.props.trading}>TradingCard</MDBModalHeader>
         <MDBModalBody>
-          (...)
+          There are currently no cards to trade you plebian
         </MDBModalBody>
         <MDBModalFooter>
           <MDBBtn color="secondary" onClick={this.props.trading}>Close</MDBBtn>
