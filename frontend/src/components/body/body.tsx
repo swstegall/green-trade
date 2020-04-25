@@ -94,10 +94,10 @@ export class Body extends Component<
             >
               <thead>
                 <tr>
-                  <th className={"th-sm"}>Name</th>
-                  <th className={"th-sm"}>Looking For</th>
-                  <th className={"th-sm"}>Trading</th>
-                  <th className={"th-sm"}>Completed</th>
+                  <th className={"th-sm"} style={{color: "#000000", backgroundColor: "#dcedc8", fontFamily: "Raleway", fontWeight: "bold", fontSize: "large"}}>Name</th>
+                  <th className={"th-sm"} style={{color: "#000000", backgroundColor: "#dcedc8", fontFamily: "Raleway", fontWeight: "bold", fontSize: "large" }}>Looking For</th>
+                  <th className={"th-sm"} style={{color: "#000000", backgroundColor: "#dcedc8", fontFamily: "Raleway", fontWeight: "bold", fontSize: "large"}}>Trading</th>
+                  <th className={"th-sm"} style={{color: "#000000",backgroundColor: "#dcedc8", fontFamily: "Raleway", fontWeight: "bold", fontSize: "large"}}>Completed</th>
                 </tr>
               </thead>
               <tbody>{this.state.tableItems}</tbody>

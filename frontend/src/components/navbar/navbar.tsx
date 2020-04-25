@@ -18,13 +18,13 @@ export class Navbar extends Component<
     addNew: any;
   },
   {}
-> {
+  > {
   constructor(props: any) {
     super(props);
   }
 
   render() {
-    const bgPink = {backgroundColor: '#388e3c'}
+    const bgPink = { backgroundColor: '#388e3c' }
     return (
       <div>
         <Router>
