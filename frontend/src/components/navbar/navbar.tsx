@@ -12,22 +12,17 @@ import {
 import { BrowserRouter as Router } from "react-router-dom";
 
 export class Navbar extends Component<
-  {},
-  { collapse: boolean; isWideEnough: boolean }
+  {
+    collapse: boolean;
+    isWideEnough: boolean;
+    viewListings: any;
+    lookingFor: any;
+    trading: any;
+  },
+  {}
 > {
   constructor(props: any) {
     super(props);
-    this.state = {
-      collapse: false,
-      isWideEnough: false,
-    };
-    this.onClick = this.onClick.bind(this);
-  }
-
-  onClick() {
-    this.setState({
-      collapse: !this.state.collapse,
-    });
   }
 
   render() {
@@ -37,21 +32,16 @@ export class Navbar extends Component<
           <MDBNavbar color="black" dark expand="md">
             <MDBContainer>
               <MDBNavbarBrand href="/">
-                <strong>
-                  GreenTrade
-                </strong>
+                <strong>GreenTrade</strong>
               </MDBNavbarBrand>
-              <MDBNavbarToggler onClick={this.onClick} />
-              <MDBCollapse isOpen={this.state.collapse} navbar>
+              <MDBNavbarToggler />
+              <MDBCollapse isOpen={this.props.collapse} navbar>
                 <MDBNavbarNav left>
-                  <MDBNavItem active>
-                    <MDBNavLink to="#">Home</MDBNavLink>
+                  <MDBNavItem onClick={this.props.lookingFor}>
+                    <MDBNavLink to="#">Looking For</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem>
-                    <MDBNavLink to="#">Link</MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <MDBNavLink to="#">Profile</MDBNavLink>
+                  <MDBNavItem onClick={this.props.trading}>
+                    <MDBNavLink to="#">Trading</MDBNavLink>
                   </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>
