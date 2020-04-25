@@ -2,11 +2,12 @@ import React, { Component } from "react";
 
 export class Body extends Component<
   { items: any },
-  { loading: boolean; tableItems: Array<any> }
+  { numItems: number; loading: boolean; tableItems: Array<any> }
 > {
   constructor(props: any) {
     super(props);
     this.state = {
+      numItems: 0,
       loading: true,
       tableItems: [],
     };
@@ -14,6 +15,9 @@ export class Body extends Component<
 
   componentDidMount() {
     if (this.props.items.length !== 0) {
+      this.setState({
+        numItems: this.props.items.length,
+      });
       const arr: any = Object.values(this.props.items)[0];
       const tempRows = arr.map((item: any, index: number) => {
         return (
@@ -22,9 +26,48 @@ export class Body extends Component<
             <td>{item.lookingFor}</td>
             <td>{item.trading}</td>
             <td>
-              {item.completed ?
-              <i style={{color: "#BBFFBB"}} className={"fas fa-check"}></i> :
-              <i style={{color: "#FFBBBB"}} className={"far fa-times-circle"}></i>}
+              {item.completed ? (
+                <i style={{ color: "#BBFFBB" }} className={"fas fa-check"}></i>
+              ) : (
+                <i
+                  style={{ color: "#FFBBBB" }}
+                  className={"far fa-times-circle"}
+                ></i>
+              )}
+            </td>
+          </tr>
+        );
+      });
+      this.setState({
+        tableItems: tempRows,
+        loading: false,
+      });
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.state.numItems !== this.props.items.length) {
+      this.setState({
+        loading: true,
+        numItems: this.props.items.length,
+      });
+      console.log(this.props.items);
+      const arr = this.props.items;
+      const tempRows = arr.map((item: any, index: number) => {
+        return (
+          <tr key={index}>
+            <td>{item.name}</td>
+            <td>{item.lookingFor}</td>
+            <td>{item.trading}</td>
+            <td>
+              {item.completed ? (
+                <i style={{ color: "#BBFFBB" }} className={"fas fa-check"}></i>
+              ) : (
+                <i
+                  style={{ color: "#FFBBBB" }}
+                  className={"far fa-times-circle"}
+                ></i>
+              )}
             </td>
           </tr>
         );

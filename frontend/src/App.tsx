@@ -22,12 +22,27 @@ class App extends Component<
       items,
     };
     this.addNew = this.addNew.bind(this);
+    this.addANewItem = this.addANewItem.bind(this);
   }
 
   addNew = () => {
     this.setState({
       addNewActive: !this.state.addNewActive,
     });
+  };
+
+  addANewItem = async (item: any) => {
+    if (this.state.items.items !== undefined) {
+      const arr: Array<any> = [...this.state.items.items, item];
+      await this.setState({
+        items: arr,
+      });
+    } else {
+      const arr: Array<any> = [...this.state.items, item];
+      await this.setState({
+        items: arr,
+      });
+    }
   };
 
   render() {
@@ -43,6 +58,7 @@ class App extends Component<
           addNewActive={this.state.addNewActive}
           items={this.state.items}
           addNew={this.addNew}
+          addANewItem={this.addANewItem}
         />
       </>
     );
