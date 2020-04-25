@@ -15,14 +15,17 @@ export class Body extends Component<
   componentDidMount() {
     if (this.props.items.length !== 0) {
       const arr: any = Object.values(this.props.items)[0];
-      console.log(arr);
       const tempRows = arr.map((item: any, index: number) => {
         return (
           <tr key={index}>
             <td>{item.name}</td>
             <td>{item.lookingFor}</td>
             <td>{item.trading}</td>
-            <td>{`${item.completed}`}</td>
+            <td>
+              {item.completed ?
+              <i style={{color: "#BBFFBB"}} className={"fas fa-check"}></i> :
+              <i style={{color: "#FFBBBB"}} className={"far fa-times-circle"}></i>}
+            </td>
           </tr>
         );
       });
@@ -30,7 +33,6 @@ export class Body extends Component<
         tableItems: tempRows,
         loading: false,
       });
-      console.log(this.state.tableItems);
     }
   }
 

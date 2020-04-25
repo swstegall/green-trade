@@ -15,9 +15,7 @@ export class Navbar extends Component<
   {
     collapse: boolean;
     isWideEnough: boolean;
-    viewListings: any;
-    lookingFor: any;
-    trading: any;
+    addNew: any;
   },
   {}
 > {
@@ -37,11 +35,8 @@ export class Navbar extends Component<
               <MDBNavbarToggler />
               <MDBCollapse isOpen={this.props.collapse} navbar>
                 <MDBNavbarNav left>
-                  <MDBNavItem onClick={this.props.lookingFor}>
-                    <MDBNavLink to="#">Looking For</MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem onClick={this.props.trading}>
-                    <MDBNavLink to="#">Trading</MDBNavLink>
+                  <MDBNavItem onClick={this.props.addNew}>
+                    <MDBNavLink to="#">Add New</MDBNavLink>
                   </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>

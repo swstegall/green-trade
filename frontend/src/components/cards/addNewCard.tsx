@@ -8,24 +8,25 @@ import {
   MDBModalFooter,
 } from "mdbreact";
 
-export class LookingForCard extends Component<
-  { lookingForActive: boolean, lookingFor: any },
+export class AddNewCard extends Component<
+  { addNewActive: boolean, items: any, addNew: any },
   {}
 > {
   constructor(props: any) {
     super(props);
+    console.log(this.props.items.items);
   }
 
   render() {
     return (
       <MDBContainer>
-      <MDBModal isOpen={this.props.lookingForActive} toggle={this.props.lookingFor} centered>
-        <MDBModalHeader toggle={this.props.lookingFor}>LookingForCard</MDBModalHeader>
+      <MDBModal isOpen={this.props.addNewActive} toggle={this.props.addNew} centered>
+        <MDBModalHeader toggle={this.props.addNew}>AddNewCard</MDBModalHeader>
         <MDBModalBody>
           (...)
         </MDBModalBody>
         <MDBModalFooter>
-          <MDBBtn color="secondary" onClick={this.props.lookingFor}>Close</MDBBtn>
+          <MDBBtn color="secondary" onClick={this.props.addNew}>Close</MDBBtn>
           <MDBBtn color="primary">Save changes</MDBBtn>
         </MDBModalFooter>
       </MDBModal>

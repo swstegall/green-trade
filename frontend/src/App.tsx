@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Navbar } from "./components/navbar/navbar";
 import { Body } from "./components/body/body";
-import { LookingForCard } from "./components/cards/lookingForCard";
-import { TradingCard } from "./components/cards/tradingCard";
+import { AddNewCard } from "./components/cards/addNewCard";
 import items from "./defaultItems.json";
 
 class App extends Component<
@@ -10,8 +9,7 @@ class App extends Component<
   {
     collapse: boolean;
     isWideEnough: boolean;
-    lookingForActive: boolean;
-    tradingActive: boolean;
+    addNewActive: boolean;
     items: any;
   }
 > {
@@ -20,30 +18,15 @@ class App extends Component<
     this.state = {
       collapse: false,
       isWideEnough: false,
-      lookingForActive: false,
-      tradingActive: false,
+      addNewActive: false,
       items,
     };
-    this.viewListings = this.viewListings.bind(this);
-    this.lookingFor = this.lookingFor.bind(this);
-    this.trading = this.trading.bind(this);
+    this.addNew = this.addNew.bind(this);
   }
 
-  viewListings = () => {
-    console.log("view listings has been clicked");
-  };
-
-  lookingFor = () => {
-    console.log("looking for has been clicked");
+  addNew = () => {
     this.setState({
-      lookingForActive: !this.state.lookingForActive,
-    });
-  };
-
-  trading = () => {
-    console.log("trading has been clicked");
-    this.setState({
-      tradingActive: !this.state.tradingActive,
+      addNewActive: !this.state.addNewActive,
     });
   };
 
@@ -53,18 +36,13 @@ class App extends Component<
         <Navbar
           collapse={this.state.collapse}
           isWideEnough={this.state.isWideEnough}
-          viewListings={this.viewListings}
-          lookingFor={this.lookingFor}
-          trading={this.trading}
+          addNew={this.addNew}
         />
         <Body items={this.state.items}/>
-        <LookingForCard
-          lookingForActive={this.state.lookingForActive}
-          lookingFor={this.lookingFor}
-        />
-        <TradingCard
-          tradingActive={this.state.tradingActive}
-          trading={this.trading}
+        <AddNewCard
+          addNewActive={this.state.addNewActive}
+          items={this.state.items}
+          addNew={this.addNew}
         />
       </>
     );
