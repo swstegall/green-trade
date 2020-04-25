@@ -24,13 +24,14 @@ export class Navbar extends Component<
   }
 
   render() {
+    const bgPink = {backgroundColor: '#388e3c'}
     return (
       <div>
         <Router>
-          <MDBNavbar color="black" dark scrolling expand="md">
+          <MDBNavbar style={bgPink} dark scrolling expand="md">
             <MDBContainer>
               <MDBNavbarBrand href="/">
-                <strong>GreenTrade</strong>
+                <strong style={{color: "#000000", fontSize:"x-large", fontFamily: "Montserrat", fontWeight:"bold"}}>GreenTrade</strong>
               </MDBNavbarBrand>
               <MDBNavbarToggler />
               <MDBCollapse isOpen={this.props.collapse} navbar>
