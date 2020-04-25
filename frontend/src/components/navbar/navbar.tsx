@@ -29,7 +29,7 @@ export class Navbar extends Component<
     return (
       <div>
         <Router>
-          <MDBNavbar color="black" dark expand="md">
+          <MDBNavbar color="black" dark scrolling expand="md">
             <MDBContainer>
               <MDBNavbarBrand href="/">
                 <strong>GreenTrade</strong>

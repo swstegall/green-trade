@@ -3,6 +3,7 @@ import { Navbar } from "./components/navbar/navbar";
 import { Body } from "./components/body/body";
 import { LookingForCard } from "./components/cards/lookingForCard";
 import { TradingCard } from "./components/cards/tradingCard";
+import items from "./defaultItems.json";
 
 class App extends Component<
   {},
@@ -11,6 +12,7 @@ class App extends Component<
     isWideEnough: boolean;
     lookingForActive: boolean;
     tradingActive: boolean;
+    items: any;
   }
 > {
   constructor(props: any) {
@@ -20,6 +22,7 @@ class App extends Component<
       isWideEnough: false,
       lookingForActive: false,
       tradingActive: false,
+      items,
     };
     this.viewListings = this.viewListings.bind(this);
     this.lookingFor = this.lookingFor.bind(this);
@@ -54,7 +57,7 @@ class App extends Component<
           lookingFor={this.lookingFor}
           trading={this.trading}
         />
-        <Body />
+        <Body items={this.state.items}/>
         <LookingForCard
           lookingForActive={this.state.lookingForActive}
           lookingFor={this.lookingFor}
