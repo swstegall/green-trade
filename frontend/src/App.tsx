@@ -53,18 +53,20 @@ class App extends Component<
     }
     const arrElemRemoved: Array<any> = arr.filter(
       (elem: any) =>
-        !(elem.name === event.name &&
-        elem.location === event.location &&
-        elem.lookingFor === event.lookingFor &&
-        elem.trading === event.trading &&
-        elem.completed === event.completed)
+        !(
+          elem.name === event.name &&
+          elem.location === event.location &&
+          elem.lookingFor === event.lookingFor &&
+          elem.trading === event.trading &&
+          elem.completed === event.completed
+        )
     );
     const newEvent = {
       name: event.name,
       location: event.location,
       lookingFor: event.lookingFor,
       trading: event.trading,
-      completed: true
+      completed: true,
     };
     await this.setState({
       items: [...arrElemRemoved, newEvent],
@@ -73,10 +75,12 @@ class App extends Component<
   };
 
   trade = (event: any) => {
-    this.setState({
-      tradePayload: event,
-      tradingActive: !this.state.tradingActive,
-    });
+    if (event.completed === false) {
+      this.setState({
+        tradePayload: event,
+        tradingActive: !this.state.tradingActive,
+      });
+    }
   };
 
   addANewItem = async (item: any) => {

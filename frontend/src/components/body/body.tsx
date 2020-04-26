@@ -59,7 +59,7 @@ export class Body extends Component<
                 fontSize: "medium",
                 fontWeight: "normal",
                 textAlign: "center",
-                verticalAlign: "middle"
+                verticalAlign: "middle",
               }}
             >
               {item.lookingFor}
@@ -151,7 +151,7 @@ export class Body extends Component<
                 fontSize: "medium",
                 fontWeight: "normal",
                 textAlign: "center",
-                verticalAlign: "middle"
+                verticalAlign: "middle",
               }}
             >
               {item.lookingFor}
@@ -205,7 +205,7 @@ export class Body extends Component<
                 "table table-striped table-hover table-bordered table-sm"
               }
               cellSpacing="0"
-              style={{ width: "100%"}}
+              style={{ width: "100%" }}
             >
               <thead>
                 <tr>
@@ -256,7 +256,7 @@ export class Body extends Component<
                       fontFamily: "Raleway",
                       fontWeight: "bold",
                       fontSize: "x-large",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     Trading
@@ -269,7 +269,7 @@ export class Body extends Component<
                       fontFamily: "Raleway",
                       fontWeight: "bold",
                       fontSize: "x-large",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     Completed

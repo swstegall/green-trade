@@ -7,6 +7,7 @@ import {
   MDBModalHeader,
   MDBModalFooter,
 } from "mdbreact";
+import { Map } from "../map/map";
 
 export class TradingCard extends Component<
   {
@@ -31,8 +32,6 @@ export class TradingCard extends Component<
     });
   }
 
-  componentDidUpdate() {}
-
   render() {
     return (
       <MDBContainer>
@@ -45,6 +44,12 @@ export class TradingCard extends Component<
             Confirm Trade?
           </MDBModalHeader>
           <MDBModalBody>
+            <div>
+              <Map
+                location={this.props.tradePayload.location}
+                name={this.props.tradePayload.name}
+              />
+            </div>
             <dl className={"row"}>
               <dt className={"col-sm-3"}>Name</dt>
               <dd className={"col-sm-9"}>{this.props.tradePayload.name}</dd>
