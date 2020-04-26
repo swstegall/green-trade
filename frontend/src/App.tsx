@@ -44,18 +44,16 @@ class App extends Component<
     this.setState({
       tradingActive: !this.state.tradingActive,
     });
-  }
+  };
 
   completeTrade = (event: any) => {
     if (this.state.items.items !== undefined) {
-      console.log(this.state.items.items);
     } else {
-      console.log(this.state.items);
     }
     this.setState({
       tradingActive: !this.state.tradingActive,
     });
-  }
+  };
 
   trade = (event: any) => {
     this.setState({
@@ -86,7 +84,7 @@ class App extends Component<
           isWideEnough={this.state.isWideEnough}
           addNew={this.addNew}
         />
-        <Body items={this.state.items} trade={this.trade}/>
+        <Body items={this.state.items} trade={this.trade} />
         <AddNewCard
           addNewActive={this.state.addNewActive}
           items={this.state.items}

@@ -27,15 +27,11 @@ export class TradingCard extends Component<
 
   componentDidMount() {
     this.setState({
-      previousItem: this.props.tradePayload
+      previousItem: this.props.tradePayload,
     });
   }
 
-  componentDidUpdate() {
-    if (this.props.tradePayload !== this.state.previousItem) {
-      console.log(this.props.tradePayload);
-    }
-  }
+  componentDidUpdate() {}
 
   render() {
     return (
