@@ -46,17 +46,28 @@ class App extends Component<
     });
   };
 
-  completeTrade = (event: any) => {
-    let arr: Array<any> = [];
-    if (!(this.state.items.items === undefined)) {
+  completeTrade = async (event: any) => {
+    let arr: any = this.state.items.items;
+    if (arr === undefined) {
       arr = this.state.items;
-    } else {
-      arr = this.state.items.items;
     }
-    console.log(event);
-    console.log(arr);
-    
-    this.setState({
+    const arrElemRemoved: Array<any> = arr.filter(
+      (elem: any) =>
+        !(elem.name === event.name &&
+        elem.location === event.location &&
+        elem.lookingFor === event.lookingFor &&
+        elem.trading === event.trading &&
+        elem.completed === event.completed)
+    );
+    const newEvent = {
+      name: event.name,
+      location: event.location,
+      lookingFor: event.lookingFor,
+      trading: event.trading,
+      completed: true
+    };
+    await this.setState({
+      items: [...arrElemRemoved, newEvent],
       tradingActive: !this.state.tradingActive,
     });
   };

@@ -11,7 +11,12 @@ import { MDBInput } from "mdbreact";
 
 export class AddNewCard extends Component<
   { addNewActive: boolean; items: any; addNew: any; addANewItem: any },
-  { editName: string; editLocation: string; editLookingFor: string; editTrading: string }
+  {
+    editName: string;
+    editLocation: string;
+    editLookingFor: string;
+    editTrading: string;
+  }
 > {
   constructor(props: any) {
     super(props);
@@ -92,7 +97,7 @@ export class AddNewCard extends Component<
             />
           </MDBModalBody>
           <MDBModalFooter>
-            <MDBBtn goutline color="secondary" onClick={this.props.addNew}>
+            <MDBBtn color="secondary" onClick={this.props.addNew}>
               Close
             </MDBBtn>
             <MDBBtn color="primary" onClick={this.submitChange}>

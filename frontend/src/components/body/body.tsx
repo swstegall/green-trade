@@ -2,14 +2,15 @@ import React, { Component } from "react";
 
 export class Body extends Component<
   { items: any; trade: any },
-  { numItems: number; loading: boolean; tableItems: Array<any> }
-  > {
+  { numItems: number; loading: boolean; tableItems: Array<any>; lastItem: any }
+> {
   constructor(props: any) {
     super(props);
     this.state = {
       numItems: 0,
       loading: true,
       tableItems: [],
+      lastItem: {},
     };
   }
 
@@ -17,6 +18,7 @@ export class Body extends Component<
     if (this.props.items.length !== 0) {
       this.setState({
         numItems: this.props.items.length,
+        lastItem: this.props.items[this.props.items.length - 1],
       });
       const arr: any = Object.values(this.props.items)[0];
       const tempRows = arr.map((item: any, index: number) => {
@@ -32,7 +34,7 @@ export class Body extends Component<
                 fontFamily: "Raleway",
                 fontSize: "regular",
                 textAlign: "center",
-                verticalAlign: "middle"
+                verticalAlign: "middle",
               }}
             >
               {item.name}
@@ -43,7 +45,7 @@ export class Body extends Component<
                 fontFamily: "Raleway",
                 fontSize: "regular",
                 textAlign: "center",
-                verticalAlign: "middle"
+                verticalAlign: "middle",
               }}
             >
               {item.location}
@@ -63,23 +65,26 @@ export class Body extends Component<
                 fontFamily: "Raleway",
                 fontSize: "regular",
                 textAlign: "center",
-                verticalAlign: "middle"
+                verticalAlign: "middle",
               }}
             >
               {item.trading}
             </td>
-            <td style={{ textAlign: "center", fontSize: "30px", verticalAlign: "middle" }}> 
+            <td
+              style={{
+                textAlign: "center",
+                fontSize: "30px",
+                verticalAlign: "middle",
+              }}
+            >
               {item.completed ? (
+                <i style={{ color: "#e53935" }} className={"fas fa-check"}></i>
+              ) : (
                 <i
                   style={{ color: "#e53935" }}
-                  className={"fas fa-check"}
+                  className={"far fa-times-circle"}
                 ></i>
-              ) : (
-                  <i
-                    style={{ color: "#e53935" }}
-                    className={"far fa-times-circle"}
-                  ></i>
-                )}
+              )}
             </td>
           </tr>
         );
@@ -92,10 +97,14 @@ export class Body extends Component<
   }
 
   componentDidUpdate() {
-    if (this.state.numItems !== this.props.items.length) {
+    if (
+      this.state.numItems !== this.props.items.length ||
+      this.props.items[this.props.items.length - 1] !== this.state.lastItem
+    ) {
       this.setState({
         loading: true,
         numItems: this.props.items.length,
+        lastItem: this.props.items[this.props.items.length - 1],
       });
       const arr = this.props.items;
       const tempRows = arr.map((item: any, index: number) => {
@@ -111,7 +120,7 @@ export class Body extends Component<
                 fontFamily: "Raleway",
                 fontSize: "regular",
                 textAlign: "center",
-                verticalAlign: "middle"
+                verticalAlign: "middle",
               }}
             >
               {item.name}
@@ -122,7 +131,7 @@ export class Body extends Component<
                 fontFamily: "Raleway",
                 fontSize: "regular",
                 textAlign: "center",
-                verticalAlign: "middle"
+                verticalAlign: "middle",
               }}
             >
               {item.location}
@@ -142,23 +151,26 @@ export class Body extends Component<
                 fontFamily: "Raleway",
                 fontSize: "regular",
                 textAlign: "center",
-                verticalAlign: "middle"
+                verticalAlign: "middle",
               }}
             >
               {item.trading}
             </td>
-            <td style={{ textAlign: "center", fontSize: "30px", verticalAlign: "middle" }}>
+            <td
+              style={{
+                textAlign: "center",
+                fontSize: "30px",
+                verticalAlign: "middle",
+              }}
+            >
               {item.completed ? (
+                <i style={{ color: "#e53935" }} className={"fas fa-check"}></i>
+              ) : (
                 <i
                   style={{ color: "#e53935" }}
-                  className={"fas fa-check"}
+                  className={"far fa-times-circle"}
                 ></i>
-              ) : (
-                  <i
-                    style={{ color: "#e53935" }}
-                    className={"far fa-times-circle"}
-                  ></i>
-                )}
+              )}
             </td>
           </tr>
         );
@@ -232,7 +244,7 @@ export class Body extends Component<
                       fontFamily: "Raleway",
                       fontWeight: "bold",
                       fontSize: "large",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     Trading
@@ -245,7 +257,7 @@ export class Body extends Component<
                       fontFamily: "Raleway",
                       fontWeight: "bold",
                       fontSize: "large",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     Completed
@@ -256,8 +268,8 @@ export class Body extends Component<
             </table>
           </div>
         ) : (
-            <div>loading</div>
-          )}
+          <div>loading</div>
+        )}
       </div>
     );
   }
