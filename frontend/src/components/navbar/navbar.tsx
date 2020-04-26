@@ -18,9 +18,6 @@ export class Navbar extends Component<
   },
   {}
 > {
-  constructor(props: any) {
-    super(props);
-  }
 
   render() {
     const bgGreen = { backgroundColor: "#66a37a" };
