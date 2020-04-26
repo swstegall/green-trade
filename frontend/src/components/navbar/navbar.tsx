@@ -23,7 +23,7 @@ export class Navbar extends Component<
   }
 
   render() {
-    const bgGreen = { backgroundColor: "#388e3c" };
+    const bgGreen = { backgroundColor: "#66a37a" };
     return (
       <div>
         <Router>

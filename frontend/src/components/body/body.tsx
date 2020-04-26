@@ -84,7 +84,7 @@ export class Body extends Component<
               }}
             >
               {item.completed ? (
-                <i style={{ color: "#e53935" }} className={"fas fa-check"}></i>
+                <i style={{ color: "#3ea361" }} className={"fas fa-check"}></i>
               ) : (
                 <i
                   style={{ color: "#e53935" }}
@@ -176,7 +176,7 @@ export class Body extends Component<
               }}
             >
               {item.completed ? (
-                <i style={{ color: "#e53935" }} className={"fas fa-check"}></i>
+                <i style={{ color: "#3ea361" }} className={"fas fa-check"}></i>
               ) : (
                 <i
                   style={{ color: "#e53935" }}
