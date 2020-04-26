@@ -47,9 +47,15 @@ class App extends Component<
   };
 
   completeTrade = (event: any) => {
-    if (this.state.items.items !== undefined) {
+    let arr: Array<any> = [];
+    if (!(this.state.items.items === undefined)) {
+      arr = this.state.items;
     } else {
+      arr = this.state.items.items;
     }
+    console.log(event);
+    console.log(arr);
+    
     this.setState({
       tradingActive: !this.state.tradingActive,
     });

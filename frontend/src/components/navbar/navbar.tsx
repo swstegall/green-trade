@@ -23,11 +23,11 @@ export class Navbar extends Component<
   }
 
   render() {
-    const bgPink = { backgroundColor: "#388e3c" };
+    const bgGreen = { backgroundColor: "#388e3c" };
     return (
       <div>
         <Router>
-          <MDBNavbar style={bgPink} dark scrolling expand="md">
+          <MDBNavbar style={bgGreen} dark scrolling expand="md">
             <MDBNavbarNav left>
               <MDBNavbarBrand href="/">
                 <strong
