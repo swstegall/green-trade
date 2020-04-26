@@ -48,6 +48,8 @@ export class TradingCard extends Component<
             <dl className={"row"}>
               <dt className={"col-sm-3"}>Name</dt>
               <dd className={"col-sm-9"}>{this.props.tradePayload.name}</dd>
+              <dt className={"col-sm-3"}>Location</dt>
+              <dd className={"col-sm-9"}>{this.props.tradePayload.location}</dd>
               <dt className={"col-sm-3"}>Looking For</dt>
               <dd className={"col-sm-9"}>
                 {this.props.tradePayload.lookingFor}

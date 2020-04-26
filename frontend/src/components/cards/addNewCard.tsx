@@ -11,23 +11,29 @@ import { MDBInput } from "mdbreact";
 
 export class AddNewCard extends Component<
   { addNewActive: boolean; items: any; addNew: any; addANewItem: any },
-  { editName: string; editLookingFor: string; editTrading: string }
+  { editName: string; editLocation: string; editLookingFor: string; editTrading: string }
 > {
   constructor(props: any) {
     super(props);
     this.state = {
       editName: "",
+      editLocation: "",
       editLookingFor: "",
       editTrading: "",
     };
     this.submitChange = this.submitChange.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleLocationChange = this.handleLocationChange.bind(this);
     this.handleLookingForChange = this.handleLookingForChange.bind(this);
     this.handleTradingChange = this.handleTradingChange.bind(this);
   }
 
   handleNameChange = (event: any) => {
     this.setState({ editName: event.target.value });
+  };
+
+  handleLocationChange = (event: any) => {
+    this.setState({ editLocation: event.target.value });
   };
 
   handleLookingForChange = (event: any) => {
@@ -41,6 +47,7 @@ export class AddNewCard extends Component<
   submitChange = () => {
     const change = {
       name: this.state.editName,
+      location: this.state.editLocation,
       lookingFor: this.state.editLookingFor,
       trading: this.state.editTrading,
       completed: false,
@@ -64,6 +71,12 @@ export class AddNewCard extends Component<
               icon={"user"}
               value={this.state.editName}
               onChange={this.handleNameChange}
+            />
+            <MDBInput
+              label={"Location"}
+              icon={"house-user"}
+              value={this.state.editLocation}
+              onChange={this.handleLocationChange}
             />
             <MDBInput
               label={"Looking For"}

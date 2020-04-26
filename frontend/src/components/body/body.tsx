@@ -46,6 +46,15 @@ export class Body extends Component<
                 verticalAlign: "middle"
               }}
             >
+              {item.location}
+            </td>
+            <td
+              style={{
+                color: "#000000",
+                fontFamily: "Raleway",
+                fontSize: "regular",
+              }}
+            >
               {item.lookingFor}
             </td>
             <td
@@ -116,6 +125,15 @@ export class Body extends Component<
                 verticalAlign: "middle"
               }}
             >
+              {item.location}
+            </td>
+            <td
+              style={{
+                color: "#000000",
+                fontFamily: "Raleway",
+                fontSize: "regular",
+              }}
+            >
               {item.lookingFor}
             </td>
             <td
@@ -179,6 +197,19 @@ export class Body extends Component<
                     }}
                   >
                     Name
+                  </th>
+                  <th
+                    className={"th-sm"}
+                    style={{
+                      color: "#000000",
+                      backgroundColor: "#dcedc8",
+                      fontFamily: "Raleway",
+                      fontWeight: "bold",
+                      fontSize: "large",
+                      textAlign: "center",
+                    }}
+                  >
+                    Location
                   </th>
                   <th
                     className={"th-sm"}
