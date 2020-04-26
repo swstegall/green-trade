@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 export class Body extends Component<
-  { items: any },
+  { items: any, trade: any },
   { numItems: number; loading: boolean; tableItems: Array<any> }
 > {
   constructor(props: any) {
@@ -21,7 +21,7 @@ export class Body extends Component<
       const arr: any = Object.values(this.props.items)[0];
       const tempRows = arr.map((item: any, index: number) => {
         return (
-          <tr key={index}>
+          <tr key={index} style={{cursor: "pointer"}} onClick={() => this.props.trade(item)}>
             <td>{item.name}</td>
             <td>{item.lookingFor}</td>
             <td>{item.trading}</td>
@@ -51,11 +51,10 @@ export class Body extends Component<
         loading: true,
         numItems: this.props.items.length,
       });
-      console.log(this.props.items);
       const arr = this.props.items;
       const tempRows = arr.map((item: any, index: number) => {
         return (
-          <tr key={index}>
+          <tr key={index} style={{cursor: "pointer"}} onClick={this.props.trade(item)}>
             <td>{item.name}</td>
             <td>{item.lookingFor}</td>
             <td>{item.trading}</td>
