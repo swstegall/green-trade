@@ -29,19 +29,19 @@ export class Navbar extends Component<
       <div>
         <Router>
           <MDBNavbar style={bgPink} dark scrolling expand="md">
-            <MDBContainer>
+            <MDBNavbarNav left>
               <MDBNavbarBrand href="/">
-                <strong style={{color: "#000000", fontSize:"x-large", fontFamily: "Montserrat", fontWeight:"bold"}}>GreenTrade</strong>
+                <strong style={{ color: "#000000", fontSize: "xx-large", fontFamily: "Montserrat", fontWeight: "bold" }}><i className="fas fa-leaf" style={{ fontSize: "30px" }}></i>GreenTrade</strong>
               </MDBNavbarBrand>
+            </MDBNavbarNav>
+            <MDBNavbarNav right>
               <MDBNavbarToggler />
               <MDBCollapse isOpen={this.props.collapse} navbar>
-                <MDBNavbarNav left>
-                  <MDBNavItem onClick={this.props.addNew}>
-                    <MDBNavLink to="#">Add New</MDBNavLink>
-                  </MDBNavItem>
-                </MDBNavbarNav>
+                <MDBNavItem onClick={this.props.addNew}>
+                  <MDBNavLink to="#" style={{ color: "#000000", fontSize: "xx-large", fontFamily: "Montserrat", fontWeight: "regular" }}>Add New</MDBNavLink>
+                </MDBNavItem>
               </MDBCollapse>
-            </MDBContainer>
+            </MDBNavbarNav>
           </MDBNavbar>
         </Router>
       </div>
