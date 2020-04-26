@@ -59,11 +59,11 @@ export class TradingCard extends Component<
             </dl>
           </MDBModalBody>
           <MDBModalFooter>
-            <MDBBtn color="secondary" onClick={this.props.closeTrade}>
+            <MDBBtn color="default" onClick={this.props.closeTrade}>
               Close
             </MDBBtn>
             <MDBBtn
-              color="primary"
+              color="light-blue"
               onClick={() => {
                 this.props.completeTrade(this.props.tradePayload);
               }}

@@ -33,7 +33,7 @@ export class Navbar extends Component<
                 <strong
                   style={{
                     color: "#000000",
-                    fontSize: "xx-large",
+                    fontSize: "xxx-large",
                     fontFamily: "Montserrat",
                     fontWeight: "bold",
                   }}
@@ -51,7 +51,7 @@ export class Navbar extends Component<
                     to="#"
                     style={{
                       color: "#000000",
-                      fontSize: "xx-large",
+                      fontSize: "xxx-large",
                       fontFamily: "Montserrat",
                       fontWeight: "regular",
                     }}

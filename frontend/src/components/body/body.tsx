@@ -32,7 +32,8 @@ export class Body extends Component<
               style={{
                 color: "#000000",
                 fontFamily: "Raleway",
-                fontSize: "regular",
+                fontSize: "medium",
+                fontWeight: "normal",
                 textAlign: "center",
                 verticalAlign: "middle",
               }}
@@ -43,7 +44,8 @@ export class Body extends Component<
               style={{
                 color: "#000000",
                 fontFamily: "Raleway",
-                fontSize: "regular",
+                fontSize: "medium",
+                fontWeight: "normal",
                 textAlign: "center",
                 verticalAlign: "middle",
               }}
@@ -54,7 +56,10 @@ export class Body extends Component<
               style={{
                 color: "#000000",
                 fontFamily: "Raleway",
-                fontSize: "regular",
+                fontSize: "medium",
+                fontWeight: "normal",
+                textAlign: "center",
+                verticalAlign: "middle"
               }}
             >
               {item.lookingFor}
@@ -63,7 +68,8 @@ export class Body extends Component<
               style={{
                 color: "#000000",
                 fontFamily: "Raleway",
-                fontSize: "regular",
+                fontSize: "medium",
+                fontWeight: "normal",
                 textAlign: "center",
                 verticalAlign: "middle",
               }}
@@ -118,7 +124,8 @@ export class Body extends Component<
               style={{
                 color: "#000000",
                 fontFamily: "Raleway",
-                fontSize: "regular",
+                fontSize: "medium",
+                fontWeight: "normal",
                 textAlign: "center",
                 verticalAlign: "middle",
               }}
@@ -129,7 +136,8 @@ export class Body extends Component<
               style={{
                 color: "#000000",
                 fontFamily: "Raleway",
-                fontSize: "regular",
+                fontSize: "medium",
+                fontWeight: "normal",
                 textAlign: "center",
                 verticalAlign: "middle",
               }}
@@ -140,7 +148,10 @@ export class Body extends Component<
               style={{
                 color: "#000000",
                 fontFamily: "Raleway",
-                fontSize: "regular",
+                fontSize: "medium",
+                fontWeight: "normal",
+                textAlign: "center",
+                verticalAlign: "middle"
               }}
             >
               {item.lookingFor}
@@ -149,7 +160,8 @@ export class Body extends Component<
               style={{
                 color: "#000000",
                 fontFamily: "Raleway",
-                fontSize: "regular",
+                fontSize: "medium",
+                fontWeight: "normal",
                 textAlign: "center",
                 verticalAlign: "middle",
               }}
@@ -193,7 +205,7 @@ export class Body extends Component<
                 "table table-striped table-hover table-bordered table-sm"
               }
               cellSpacing="0"
-              style={{ width: "100%" }}
+              style={{ width: "100%"}}
             >
               <thead>
                 <tr>
@@ -204,7 +216,7 @@ export class Body extends Component<
                       backgroundColor: "#dcedc8",
                       fontFamily: "Raleway",
                       fontWeight: "bold",
-                      fontSize: "large",
+                      fontSize: "x-large",
                       textAlign: "center",
                     }}
                   >
@@ -217,7 +229,7 @@ export class Body extends Component<
                       backgroundColor: "#dcedc8",
                       fontFamily: "Raleway",
                       fontWeight: "bold",
-                      fontSize: "large",
+                      fontSize: "x-large",
                       textAlign: "center",
                     }}
                   >
@@ -230,7 +242,7 @@ export class Body extends Component<
                       backgroundColor: "#dcedc8",
                       fontFamily: "Raleway",
                       fontWeight: "bold",
-                      fontSize: "large",
+                      fontSize: "x-large",
                       textAlign: "center",
                     }}
                   >
@@ -243,8 +255,8 @@ export class Body extends Component<
                       backgroundColor: "#dcedc8",
                       fontFamily: "Raleway",
                       fontWeight: "bold",
-                      fontSize: "large",
-                      textAlign: "center",
+                      fontSize: "x-large",
+                      textAlign: "center"
                     }}
                   >
                     Trading
@@ -256,8 +268,8 @@ export class Body extends Component<
                       backgroundColor: "#dcedc8",
                       fontFamily: "Raleway",
                       fontWeight: "bold",
-                      fontSize: "large",
-                      textAlign: "center",
+                      fontSize: "x-large",
+                      textAlign: "center"
                     }}
                   >
                     Completed
