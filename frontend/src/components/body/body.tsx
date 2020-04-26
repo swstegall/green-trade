@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export class Body extends Component<
   { items: any, trade: any },
   { numItems: number; loading: boolean; tableItems: Array<any> }
-> {
+  > {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -21,19 +21,19 @@ export class Body extends Component<
       const arr: any = Object.values(this.props.items)[0];
       const tempRows = arr.map((item: any, index: number) => {
         return (
-          <tr key={index} style={{cursor: "pointer"}} onClick={() => this.props.trade(item)}>
-            <td>{item.name}</td>
-            <td>{item.lookingFor}</td>
-            <td>{item.trading}</td>
+          <tr key={index}>
+            <td style={{ color: "#000000", fontFamily: "Raleway", fontSize: "regular" }}>{item.name}</td>
+            <td style={{ color: "#000000", fontFamily: "Raleway", fontSize: "regular" }}>{item.lookingFor}</td>
+            <td style={{ color: "#000000", fontFamily: "Raleway", fontSize: "regular" }}>{item.trading}</td>
             <td>
               {item.completed ? (
-                <i style={{ color: "#BBFFBB" }} className={"fas fa-check"}></i>
+                <i style={{ color: "#BBFFBB", fontSize: "30px" }} className={"fas fa-check"}></i>
               ) : (
-                <i
-                  style={{ color: "#FFBBBB" }}
-                  className={"far fa-times-circle"}
-                ></i>
-              )}
+                  <i
+                    style={{ color: "#FFBBBB", fontSize: "30px" }}
+                    className={"far fa-times-circle"}
+                  ></i>
+                )}
             </td>
           </tr>
         );
@@ -54,19 +54,19 @@ export class Body extends Component<
       const arr = this.props.items;
       const tempRows = arr.map((item: any, index: number) => {
         return (
-          <tr key={index} style={{cursor: "pointer"}} onClick={this.props.trade(item)}>
-            <td>{item.name}</td>
-            <td>{item.lookingFor}</td>
-            <td>{item.trading}</td>
+          <tr key={index}>
+            <td style={{ color: "#000000", fontFamily: "Raleway", fontSize: "regular" }}>{item.name}</td>
+            <td style={{ color: "#000000", fontFamily: "Raleway", fontSize: "regular" }}>{item.lookingFor}</td>
+            <td style={{ color: "#000000", fontFamily: "Raleway", fontSize: "regular" }}>{item.trading}</td>
             <td>
               {item.completed ? (
-                <i style={{ color: "#BBFFBB" }} className={"fas fa-check"}></i>
+                <i style={{ color: "#BBFFBB", fontSize: "30px" }} className={"fas fa-check"}></i>
               ) : (
-                <i
-                  style={{ color: "#FFBBBB" }}
-                  className={"far fa-times-circle"}
-                ></i>
-              )}
+                  <i
+                    style={{ color: "#FFBBBB", fontSize: "30px" }}
+                    className={"far fa-times-circle"}
+                  ></i>
+                )}
             </td>
           </tr>
         );
@@ -93,18 +93,19 @@ export class Body extends Component<
             >
               <thead>
                 <tr>
-                  <th className={"th-sm"}>Name</th>
-                  <th className={"th-sm"}>Looking For</th>
-                  <th className={"th-sm"}>Trading</th>
-                  <th className={"th-sm"}>Completed</th>
+                  <th className={"th-sm"} style={{ color: "#000000", backgroundColor: "#dcedc8", fontFamily: "Raleway", fontWeight: "bold", fontSize: "large", textAlign: "center" }}>Name</th>
+                  <th className={"th-sm"} style={{ color: "#000000", backgroundColor: "#dcedc8", fontFamily: "Raleway", fontWeight: "bold", fontSize: "large", textAlign: "center"}}>Looking For</th>
+                  <th className={"th-sm"} style={{ color: "#000000", backgroundColor: "#dcedc8", fontFamily: "Raleway", fontWeight: "bold", fontSize: "large" }}>Trading</th>
+                  <th className={"th-sm"} style={{ color: "#000000", backgroundColor: "#dcedc8", fontFamily: "Raleway", fontWeight: "bold", fontSize: "large" }}>Completed</th>
                 </tr>
               </thead>
-              <tbody>{this.state.tableItems}</tbody>
+            <tbody>{this.state.tableItems}</tbody>
             </table>
           </div>
-        ) : (
-          <div>loading</div>
-        )}
+    ) : (
+      <div>loading</div>
+    )
+  }
       </div>
     );
   }
