@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export class Body extends Component<
   { items: any; trade: any },
   { numItems: number; loading: boolean; tableItems: Array<any> }
-> {
+  > {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -31,6 +31,8 @@ export class Body extends Component<
                 color: "#000000",
                 fontFamily: "Raleway",
                 fontSize: "regular",
+                textAlign: "center",
+                verticalAlign: "middle"
               }}
             >
               {item.name}
@@ -40,6 +42,8 @@ export class Body extends Component<
                 color: "#000000",
                 fontFamily: "Raleway",
                 fontSize: "regular",
+                textAlign: "center",
+                verticalAlign: "middle"
               }}
             >
               {item.lookingFor}
@@ -49,22 +53,24 @@ export class Body extends Component<
                 color: "#000000",
                 fontFamily: "Raleway",
                 fontSize: "regular",
+                textAlign: "center",
+                verticalAlign: "middle"
               }}
             >
               {item.trading}
             </td>
-            <td>
+            <td style={{ textAlign: "center", fontSize: "30px", verticalAlign: "middle" }}> 
               {item.completed ? (
                 <i
-                  style={{ color: "#BBFFBB", fontSize: "30px" }}
+                  style={{ color: "#e53935" }}
                   className={"fas fa-check"}
                 ></i>
               ) : (
-                <i
-                  style={{ color: "#FFBBBB", fontSize: "30px" }}
-                  className={"far fa-times-circle"}
-                ></i>
-              )}
+                  <i
+                    style={{ color: "#e53935" }}
+                    className={"far fa-times-circle"}
+                  ></i>
+                )}
             </td>
           </tr>
         );
@@ -95,6 +101,8 @@ export class Body extends Component<
                 color: "#000000",
                 fontFamily: "Raleway",
                 fontSize: "regular",
+                textAlign: "center",
+                verticalAlign: "middle"
               }}
             >
               {item.name}
@@ -104,6 +112,8 @@ export class Body extends Component<
                 color: "#000000",
                 fontFamily: "Raleway",
                 fontSize: "regular",
+                textAlign: "center",
+                verticalAlign: "middle"
               }}
             >
               {item.lookingFor}
@@ -113,22 +123,24 @@ export class Body extends Component<
                 color: "#000000",
                 fontFamily: "Raleway",
                 fontSize: "regular",
+                textAlign: "center",
+                verticalAlign: "middle"
               }}
             >
               {item.trading}
             </td>
-            <td>
+            <td style={{ textAlign: "center", fontSize: "30px", verticalAlign: "middle" }}>
               {item.completed ? (
                 <i
-                  style={{ color: "#BBFFBB", fontSize: "30px" }}
+                  style={{ color: "#e53935" }}
                   className={"fas fa-check"}
                 ></i>
               ) : (
-                <i
-                  style={{ color: "#FFBBBB", fontSize: "30px" }}
-                  className={"far fa-times-circle"}
-                ></i>
-              )}
+                  <i
+                    style={{ color: "#e53935" }}
+                    className={"far fa-times-circle"}
+                  ></i>
+                )}
             </td>
           </tr>
         );
@@ -189,6 +201,7 @@ export class Body extends Component<
                       fontFamily: "Raleway",
                       fontWeight: "bold",
                       fontSize: "large",
+                      textAlign: "center"
                     }}
                   >
                     Trading
@@ -201,6 +214,7 @@ export class Body extends Component<
                       fontFamily: "Raleway",
                       fontWeight: "bold",
                       fontSize: "large",
+                      textAlign: "center"
                     }}
                   >
                     Completed
@@ -211,8 +225,8 @@ export class Body extends Component<
             </table>
           </div>
         ) : (
-          <div>loading</div>
-        )}
+            <div>loading</div>
+          )}
       </div>
     );
   }

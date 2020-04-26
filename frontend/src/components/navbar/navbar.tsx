@@ -38,7 +38,7 @@ export class Navbar extends Component<
                     fontWeight: "bold",
                   }}
                 >
-                  <i className="fas fa-leaf" style={{ fontSize: "30px" }}></i>
+                  <i className="fas fa-leaf" style={{ fontSize: "45px" }}></i>
                   GreenTrade
                 </strong>
               </MDBNavbarBrand>

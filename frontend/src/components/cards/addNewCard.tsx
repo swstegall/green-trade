@@ -79,7 +79,7 @@ export class AddNewCard extends Component<
             />
           </MDBModalBody>
           <MDBModalFooter>
-            <MDBBtn color="secondary" onClick={this.props.addNew}>
+            <MDBBtn goutline color="secondary" onClick={this.props.addNew}>
               Close
             </MDBBtn>
             <MDBBtn color="primary" onClick={this.submitChange}>
